@@ -27,6 +27,10 @@ export default {
       type: Number,
       default: 10
     },
+    padding: {
+      type: Number,
+      default: 10
+    },
     width: {
       type: String,
       default: 'hug',
@@ -109,8 +113,12 @@ export default {
         fill: '100%',
       }
       return {
-        width: this.fixWidth || map[this.width],
-        height: this.fixheight || map[this.height],
+        display: 'flex',
+        flexDirection: this.col ? 'column' : 'row',
+        gap: `${this.gap}px`,
+        padding: `${this.padding}px`,
+        width: this.fixWidth ? `${this.fixWidth}px` : map[this.width],
+        height: this.fixHeight ? `${this.fixHeight}px` : map[this.height],
         justifyContent: this.justifyContent,
         justifySelf: this.justifySelf,
         alignItems: this.alignItems,
