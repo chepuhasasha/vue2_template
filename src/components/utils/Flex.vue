@@ -11,6 +11,10 @@
 export default {
   name: 'Flex',
   props: {
+    dev: {
+      type: Boolean,
+      default: false
+    },
     tag: {
       type: String,
       default: 'div'
@@ -30,35 +34,65 @@ export default {
 			  return ['hug', 'fill'].includes(value)
 		  }
     },
+    fixWidth: {
+      type: Number,
+      default: null,
+      validator: (value) => {
+			  return typeof value === 'number'
+		  }
+    },
     height: {
       type: String,
       default: 'hug',
       validator: (value) => {
-			  return ['hug', 'fill'].includes(value)
+        return ['hug', 'fill'].includes(value)
 		  }
+    },
+    fixheight: {
+      type: Number,
+      default: null,
+      validator: (value) => {
+        return typeof value === 'number'
+      }
     },
     justifyContent: {
       type: String,
       default: 'start',
-      // validator: (value) => {
-			//   return ['hug', 'fill'].includes(value)
-		  // }
+      validator: (value) => {
+			  return [
+          'start',
+          'center',
+          'space-around',
+          'space-between',
+          'end'
+        ].includes(value)
+		  }
     },
     alignItems: {
       type: String,
-      default: 'start'
+      default: 'start',
+      validator: (value) => {
+			  return [
+          'start',
+          'center',
+          'end'
+        ].includes(value)
+		  }
     },
   },
   computed: {
     getStyle() {
-      let map = { 
+      const map = { 
         hug: 'max-content',
-        fill: '100%'
+        fill: '100%',
       }
-      let result = {}
-      result.width = map[this.width]
-      result.height = map[this.height]
-      return result
+      return {
+        width: this.fixWidth || map[this.width],
+        height: this.fixheight || map[this.height],
+        justifyContent: this.justifyContent,
+        alignItems: this.alignItems,
+        border: this.dev ? '1px solid black' : 'none'
+      }
     }
   }
 }
