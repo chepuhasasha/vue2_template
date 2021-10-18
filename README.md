@@ -1,4 +1,4 @@
-# snow removal.
+# VUE template.
 
 ## Project setup
 ```
