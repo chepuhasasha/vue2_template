@@ -1,9 +1,9 @@
 /*eslint-disable */
 // import { mount } from '@vue/test-utils';
-// import Button from '@/components/Button.vue';
+// import Flex from '@/components/utils/Flex.vue';
 
-// describe('Button', () => {
-//   const wrapper = mount(Button);
+// describe('Flex', () => {
+//   const wrapper = mount(Flex);
 //   it('clicked', () => {
 //     wrapper.trigger('click')
 //     expect(wrapper.emitted().click).toBeTruthy()

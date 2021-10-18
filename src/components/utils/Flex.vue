@@ -28,8 +28,8 @@ export default {
       default: 10
     },
     padding: {
-      type: Number,
-      default: 10
+      type: String,
+      default: '10px'
     },
     width: {
       type: String,
@@ -41,9 +41,6 @@ export default {
     fixWidth: {
       type: Number,
       default: null,
-      validator: (value) => {
-			  return typeof value === 'number'
-		  }
     },
     height: {
       type: String,
@@ -55,9 +52,6 @@ export default {
     fixheight: {
       type: Number,
       default: null,
-      validator: (value) => {
-        return typeof value === 'number'
-      }
     },
     justifyContent: {
       type: String,
@@ -116,7 +110,7 @@ export default {
         display: 'flex',
         flexDirection: this.col ? 'column' : 'row',
         gap: `${this.gap}px`,
-        padding: `${this.padding}px`,
+        padding: this.padding,
         width: this.fixWidth ? `${this.fixWidth}px` : map[this.width],
         height: this.fixHeight ? `${this.fixHeight}px` : map[this.height],
         justifyContent: this.justifyContent,
@@ -126,6 +120,9 @@ export default {
         border: this.dev ? '1px solid black' : 'none'
       }
     }
+  },
+  mounted() {
+    this.$emit('mounted')
   }
 }
 </script>

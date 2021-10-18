@@ -14,7 +14,7 @@ import UI from '@/components/UI/'
 library.add(fas);
 library.add(fab);
 
-Vue.component("font-awesome-icon", FontAwesomeIcon);
+Vue.component("icon", FontAwesomeIcon);
 
 Vue.config.productionTip = false
 
