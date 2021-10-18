@@ -8,6 +8,9 @@ import store from './store'
 import router from './router'
 import App from './App.vue'
 
+import Utils from '@/components/utils/'
+import UI from '@/components/UI/'
+
 library.add(fas);
 library.add(fab);
 
@@ -16,6 +19,10 @@ Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.config.productionTip = false
 
 new Vue({
+  components: {
+    ...Utils,
+    ...UI
+  },
   router,
   store,
   render: h => h(App)

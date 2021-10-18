@@ -68,7 +68,29 @@ export default {
         ].includes(value)
 		  }
     },
+    justifySelf: {
+      type: String,
+      default: 'start',
+      validator: (value) => {
+			  return [
+          'start',
+          'center',
+          'end'
+        ].includes(value)
+		  }
+    },
     alignItems: {
+      type: String,
+      default: 'start',
+      validator: (value) => {
+			  return [
+          'start',
+          'center',
+          'end'
+        ].includes(value)
+		  }
+    },
+    alignSelf: {
       type: String,
       default: 'start',
       validator: (value) => {
@@ -90,7 +112,9 @@ export default {
         width: this.fixWidth || map[this.width],
         height: this.fixheight || map[this.height],
         justifyContent: this.justifyContent,
+        justifySelf: this.justifySelf,
         alignItems: this.alignItems,
+        alignSelf: this.alignSelf,
         border: this.dev ? '1px solid black' : 'none'
       }
     }
