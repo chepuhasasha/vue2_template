@@ -4,8 +4,4 @@
 
 // describe('Flex', () => {
 //   const wrapper = mount(Flex);
-//   it('clicked', () => {
-//     wrapper.trigger('click')
-//     expect(wrapper.emitted().click).toBeTruthy()
-//   });
 // });
