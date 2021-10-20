@@ -5,10 +5,17 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    theme: 'Dark'
   },
   mutations: {
+    SET_THEME(state, name) {
+      state.theme = name
+    }
   },
   actions: {
+    setTheme({ commit }, name) {
+      commit('SET_THEME', name)
+    }
   },
   modules: {
   }
