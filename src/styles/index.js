@@ -30,7 +30,7 @@ const styles = {
 
   methods: {
     setTheme: (name) => {
-     this.themesList.forEach(key => {
+     Object.keys(this.themes[name]).forEach(key => {
         document.documentElement.style.setProperty(`--${key}`, this.themes[name][key])
       })
     }
