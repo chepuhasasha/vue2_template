@@ -2,6 +2,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
 }
 
 ul[class],
@@ -27,7 +28,6 @@ dd {
 }
 
 body {
-  min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
@@ -56,4 +56,18 @@ button,
 textarea,
 select {
   font: inherit;
+  border: none;
+  outline: none;
+}
+
+*::-webkit-scrollbar {
+  background-color: none;
+  height: 0px;
+  width: 0px;
+}
+*::-webkit-scrollbar-thumb {
+  background: none;
+}
+*::-webkit-scrollbar-corner {
+  background: none;
 }

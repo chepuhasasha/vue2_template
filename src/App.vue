@@ -1,15 +1,25 @@
 <template lang='pug'>
-  #app
+  #app(:class='theme')
     router-view
 </template>
+
 <script>
-import { styles } from '@/styles'
+import { mapState } from 'vuex';
 
 export default {
   name: 'App',
-  mixins: [styles]
-}
+  computed: {
+    ...mapState({
+      theme: (state) => [state.theme],
+    }),
+  },
+};
 </script>
 
-<style lang="scss">
+<style lang="less">
+#app {
+  background: var(--bg_0_1);
+  width: 100vw;
+  height: 100vh;
+}
 </style>

@@ -1,28 +1,16 @@
-import Vue from 'vue'
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+import store from './store';
+import './less/main.less';
+import Container from './components/utils/Container.vue';
 
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fas } from "@fortawesome/free-solid-svg-icons";
-import { fab } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import store from './store'
-import router from './router'
-import App from './App.vue'
+Vue.config.productionTip = false;
 
-import Kit from '@/components'
-
-library.add(fas);
-library.add(fab);
-
-Vue.component("icon", FontAwesomeIcon);
-
-Vue.config.productionTip = false
+Vue.component('container', Container);
 
 new Vue({
-  components: {
-    ...Kit
-  },
   router,
   store,
-  render: h => h(App)
-}).$mount('#app')
- 
+  render: (h) => h(App),
+}).$mount('#app');
