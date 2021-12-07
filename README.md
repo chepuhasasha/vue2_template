@@ -1,5 +1,5 @@
-![Caver](./.github/caver.png)
-# VUE template.
+# VUE 2
+app template.
 
 ## Project setup
 ```
