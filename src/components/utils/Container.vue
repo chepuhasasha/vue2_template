@@ -36,7 +36,15 @@ export default {
 
 <style lang='less' module>
 .default {
-  background: var(--bg_0_1);
+  flex-direction: column;
+
+  width: max-content;
+  height: max-content;
+
+  background: var(--bg_0_05);
   border: var(--border_0);
+  backdrop-filter: blur(5px);
+
+  padding: 20px;
 }
 </style>
